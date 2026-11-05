@@ -83,7 +83,7 @@
 
 **Data checks (possible traps in the data)**
 - **Impossible dates:** 323 accounts have an opening date *after* 1 Jan 2025 even though they transacted before it, and 4,318 were "opened" after their first transaction. This cannot happen in a real bank, yet these accounts are mules far more often (33% and 10%, against 2% overall), so it may be one of the dataset's planted red herrings. Removing the account-age feature changes LightGBM's PR-AUC only from 0.56 to 0.55, within the spread, so the model does not depend on it. *(Checked separately; not yet a cell in the notebook.)*
-- **Dormant accounts:** 26% of mules had no transaction in the 30 days before the cutoff, against 4% of genuine accounts. This matches the "dormant account suddenly reactivated" pattern that other mule-detection projects also use as a rule.
+- **Dormant accounts:** 26% of mules had no transaction in the 30 days before the cutoff, against 4% of genuine accounts. *Caution:* the dataset's organisers deliberately planted genuine "dormant then reactivated" accounts as a trap (one of the challenge's red-herring groups, as reported by the [DhanRakshak](https://github.com/shivangiS04/DhanRakshak) submission), so this signal may not hold on harder test sets.
 
 ## 5. Speed and scale
 
@@ -112,8 +112,9 @@
 3. Click **Run All**. The full run takes about 20–30 minutes; for a quick trial, set `N_FILES = 20`.
 
 ```
-heimdall/
+heimdall-upi/
 ├── README.md
+├── LICENSE                                MIT licence for the code
 ├── notebooks/heimdall_benchmark.ipynb   all steps of Figure 2, with plain explanations
 ├── figures/                               Figure 1 and Figure 2
 └── results/                               benchmark_summary.csv and benchmark_results_by_split.csv (the notebook's outputs)
@@ -121,8 +122,9 @@ heimdall/
 
 ## 9. Data, licence, originality
 
-- **Data:** RBIH × IIT Delhi National Fraud Prevention Challenge Phase-2 dataset (Kaggle), CC BY-NC-SA 4.0. No confidential or real customer data is used anywhere in this project.
-- **Originality:** this is our own work, submitted by **<YOUR NAME>** (team **<TEAM NAME>**, <EMAIL>), Sri Sai Ram Engineering College, Chennai.
+- **Code:** MIT licence (see [`LICENSE`](LICENSE)).
+- **Data:** RBIH × IIT Delhi National Fraud Prevention Challenge Phase-2 dataset (Kaggle), CC BY-NC-SA 4.0 (non-commercial). The data is not included in this repository and keeps its own licence. No confidential or real customer data is used anywhere in this project.
+- **Originality:** this is our own work, submitted by **Gokul Jayachandran** (team **MARK XLVI**, gokuljai2006@gmail.com), Sri Sai Ram Engineering College, Chennai.
 
 ## References
 
