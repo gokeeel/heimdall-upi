@@ -1,0 +1,815 @@
+[
+ {
+  "features": "+ graph + suspect list",
+  "method": "Simple rule",
+  "n_features": 28,
+  "ROC-AUC": 0.8143676987157761,
+  "PR-AUC": 0.08263836187569021,
+  "caught@1/100": 0.028862478777589132,
+  "caught@1/1000": 0.0022637238256932655,
+  "oof_ROC-AUC": 0.8252671797620558,
+  "CI": {
+   "ROC-AUC": [
+    0.806453573854253,
+    0.824880023350582
+   ],
+   "PR-AUC": [
+    0.07801204232040447,
+    0.0888199057539696
+   ],
+   "caught@1/100": [
+    0.0223772077202128,
+    0.04018574794108331
+   ],
+   "caught@1/1000": [
+    0.0005511176250632726,
+    0.0049579605314883255
+   ]
+  },
+  "1/100": {
+   "threshold": 3.367295829986474,
+   "test_caught": 0.04074702886247878,
+   "test_n_caught": 72,
+   "test_genuine_flagged": 0.012194051146965207,
+   "test_n_genuine_flagged": 1111,
+   "test_precision": 0.060862214708368556,
+   "rural_genuine_flagged": 0.013346135381661066,
+   "urban_genuine_flagged": 0.012045355970010534,
+   "money_held": 0.08069735854975697,
+   "money_held_range": [
+    0.051199957142094236,
+    0.11850794280561117
+   ],
+   "mules_held_before_flag": 0.09054895302773061,
+   "n_mules_held": 160,
+   "median_days_before_flag": 127.5,
+   "genuine_ever_held": 0.0167160575128965,
+   "n_genuine_held": 1523,
+   "genuine_money_held": 0.01590438138780964
+  },
+  "1/1000": {
+   "threshold": 3.8918202981106265,
+   "test_caught": 0.003395585738539898,
+   "test_n_caught": 6,
+   "test_genuine_flagged": 0.0027110086708374494,
+   "test_n_genuine_flagged": 247,
+   "test_precision": 0.023715415019762844,
+   "rural_genuine_flagged": 0.0026884301488238117,
+   "urban_genuine_flagged": 0.0027139227957122497,
+   "money_held": 0.0063004531330938815,
+   "money_held_range": [
+    0.001855858191863521,
+    0.012273863790089231
+   ],
+   "mules_held_before_flag": 0.019241652518392757,
+   "n_mules_held": 34,
+   "median_days_before_flag": 91.5,
+   "genuine_ever_held": 0.00455493359675118,
+   "n_genuine_held": 415,
+   "genuine_money_held": 0.004150711300769863
+  },
+  "equal 1/100": {
+   "money_held": 0.02772901464724392,
+   "money_held_range": [
+    0.014906376519693374,
+    0.04438050571211562
+   ],
+   "mules_held_before_flag": 0.04867006225240521,
+   "n_mules_held": 86,
+   "median_days_before_flag": 101.5,
+   "genuine_ever_held": 0.010075732630885742,
+   "n_genuine_held": 918,
+   "genuine_money_held": 0.009077979512790038
+  },
+  "equal 1/1000": {
+   "money_held": 0.0003289724153330473,
+   "money_held_range": [
+    2.835785979135292e-06,
+    0.0009833199700091174
+   ],
+   "mules_held_before_flag": 0.003961516694963215,
+   "n_mules_held": 7,
+   "median_days_before_flag": 104.0,
+   "genuine_ever_held": 0.0010097684118099,
+   "n_genuine_held": 92,
+   "genuine_money_held": 0.0004205152974709059
+  },
+  "seconds": 5
+ },
+ {
+  "features": "+ graph + suspect list",
+  "method": "Logistic regression",
+  "n_features": 28,
+  "ROC-AUC": 0.8051429837512409,
+  "PR-AUC": 0.1491602517626186,
+  "caught@1/100": 0.1420486700622524,
+  "caught@1/1000": 0.03791737408036219,
+  "oof_ROC-AUC": 0.8569056004454401,
+  "CI": {
+   "ROC-AUC": [
+    0.794493063559895,
+    0.8208766745627537
+   ],
+   "PR-AUC": [
+    0.1364611923352807,
+    0.16265999029879677
+   ],
+   "caught@1/100": [
+    0.1283354442255371,
+    0.15772066961815162
+   ],
+   "caught@1/1000": [
+    0.028200414733696104,
+    0.04821622639514323
+   ]
+  },
+  "1/100": {
+   "threshold": 0.9512215830065022,
+   "test_caught": 0.1041312959818902,
+   "test_n_caught": 184,
+   "test_genuine_flagged": 0.0065525189331577215,
+   "test_n_genuine_flagged": 597,
+   "test_precision": 0.235595390524968,
+   "rural_genuine_flagged": 0.007489198271723476,
+   "urban_genuine_flagged": 0.006431625255592044,
+   "money_held": 0.17918111292034833,
+   "money_held_range": [
+    0.14210388182682682,
+    0.22010134659488442
+   ],
+   "mules_held_before_flag": 0.19468024900962083,
+   "n_mules_held": 344,
+   "median_days_before_flag": 146.0,
+   "genuine_ever_held": 0.015936779716825816,
+   "n_genuine_held": 1452,
+   "genuine_money_held": 0.013367814552377354
+  },
+  "1/1000": {
+   "threshold": 0.9907714088147143,
+   "test_caught": 0.010186757215619695,
+   "test_n_caught": 18,
+   "test_genuine_flagged": 0.000252442102952475,
+   "test_n_genuine_flagged": 23,
+   "test_precision": 0.43902439024390244,
+   "rural_genuine_flagged": 0.0002880460873739798,
+   "urban_genuine_flagged": 0.00024784683065865294,
+   "money_held": 0.01460155770590464,
+   "money_held_range": [
+    0.008010888565919541,
+    0.0233224090659424
+   ],
+   "mules_held_before_flag": 0.027164685908319185,
+   "n_mules_held": 48,
+   "median_days_before_flag": 142.0,
+   "genuine_ever_held": 0.0005926901547579848,
+   "n_genuine_held": 54,
+   "genuine_money_held": 0.0002415751499917544
+  },
+  "equal 1/100": {
+   "money_held": 0.1118319339007957,
+   "money_held_range": [
+    0.08278231742439862,
+    0.14795580158243307
+   ],
+   "mules_held_before_flag": 0.14035087719298245,
+   "n_mules_held": 248,
+   "median_days_before_flag": 140.0,
+   "genuine_ever_held": 0.010009878169245966,
+   "n_genuine_held": 912,
+   "genuine_money_held": 0.008096593342498954
+  },
+  "equal 1/1000": {
+   "money_held": 0.01984608363292104,
+   "money_held_range": [
+    0.0117675223054507,
+    0.03012815543067136
+   ],
+   "mules_held_before_flag": 0.03508771929824561,
+   "n_mules_held": 62,
+   "median_days_before_flag": 142.0,
+   "genuine_ever_held": 0.0010097684118099,
+   "n_genuine_held": 92,
+   "genuine_money_held": 0.00039773170571996913
+  },
+  "ms_per_account": 1.2594419999913953,
+  "seconds": 17
+ },
+ {
+  "features": "+ graph + suspect list",
+  "method": "Random forest",
+  "n_features": 28,
+  "ROC-AUC": 0.8104931183578349,
+  "PR-AUC": 0.17302690808490997,
+  "caught@1/100": 0.18788907753254103,
+  "caught@1/1000": 0.0588568194680249,
+  "oof_ROC-AUC": 0.8582897354945204,
+  "CI": {
+   "ROC-AUC": [
+    0.7992183585031929,
+    0.8220589227534321
+   ],
+   "PR-AUC": [
+    0.15663336692440788,
+    0.18963475695469656
+   ],
+   "caught@1/100": [
+    0.17255870189032188,
+    0.21025733378291392
+   ],
+   "caught@1/1000": [
+    0.044513547846994746,
+    0.06990017452235986
+   ]
+  },
+  "1/100": {
+   "threshold": 0.07962284901947195,
+   "test_caught": 0.0730050933786078,
+   "test_n_caught": 129,
+   "test_genuine_flagged": 0.0014048951816485566,
+   "test_n_genuine_flagged": 128,
+   "test_precision": 0.5019455252918288,
+   "rural_genuine_flagged": 0.0015362457993278924,
+   "urban_genuine_flagged": 0.0013879422516884566,
+   "money_held": 0.08821527927652685,
+   "money_held_range": [
+    0.06171242805984208,
+    0.11907499609709023
+   ],
+   "mules_held_before_flag": 0.100169779286927,
+   "n_mules_held": 177,
+   "median_days_before_flag": 172.0,
+   "genuine_ever_held": 0.004236637032158929,
+   "n_genuine_held": 386,
+   "genuine_money_held": 0.003696991577863024
+  },
+  "1/1000": {
+   "threshold": 0.21904743056612117,
+   "test_caught": 0.007357102433503113,
+   "test_n_caught": 13,
+   "test_genuine_flagged": 4.3902974426517395e-05,
+   "test_n_genuine_flagged": 4,
+   "test_precision": 0.7647058823529411,
+   "rural_genuine_flagged": 0.0,
+   "urban_genuine_flagged": 4.956936613173059e-05,
+   "money_held": 0.01626301956679801,
+   "money_held_range": [
+    0.003287912133877545,
+    0.03408709490094505
+   ],
+   "mules_held_before_flag": 0.009620826259196379,
+   "n_mules_held": 17,
+   "median_days_before_flag": 172.0,
+   "genuine_ever_held": 8.780594885303479e-05,
+   "n_genuine_held": 8,
+   "genuine_money_held": 0.00019518662828388593
+  },
+  "equal 1/100": {
+   "money_held": 0.15195027995180205,
+   "money_held_range": [
+    0.11504583463380241,
+    0.18942969560622033
+   ],
+   "mules_held_before_flag": 0.15110356536502548,
+   "n_mules_held": 267,
+   "median_days_before_flag": 165.0,
+   "genuine_ever_held": 0.010009878169245966,
+   "n_genuine_held": 912,
+   "genuine_money_held": 0.006860950949307145
+  },
+  "equal 1/1000": {
+   "money_held": 0.06272740708767789,
+   "money_held_range": [
+    0.038763418876088196,
+    0.09170171009134159
+   ],
+   "mules_held_before_flag": 0.0520656479909451,
+   "n_mules_held": 92,
+   "median_days_before_flag": 177.5,
+   "genuine_ever_held": 0.0010097684118099,
+   "n_genuine_held": 92,
+   "genuine_money_held": 0.0010776059498468196
+  },
+  "ms_per_account": 55.28937550025148,
+  "seconds": 516
+ },
+ {
+  "features": "+ graph + suspect list",
+  "method": "LightGBM",
+  "n_features": 28,
+  "ROC-AUC": 0.825502888757329,
+  "PR-AUC": 0.13542071211216256,
+  "caught@1/100": 0.1414827391058291,
+  "caught@1/1000": 0.039615166949632144,
+  "oof_ROC-AUC": 0.8380404690315495,
+  "CI": {
+   "ROC-AUC": [
+    0.8142276062470165,
+    0.8379075273670249
+   ],
+   "PR-AUC": [
+    0.12186616028292774,
+    0.15104021228066625
+   ],
+   "caught@1/100": [
+    0.12497347198641766,
+    0.15961180467543953
+   ],
+   "caught@1/1000": [
+    0.029085858182108883,
+    0.05223552688113109
+   ]
+  },
+  "1/100": {
+   "threshold": 0.004259345962991768,
+   "test_caught": 0.10922467458970006,
+   "test_n_caught": 193,
+   "test_genuine_flagged": 0.005542750521347822,
+   "test_n_genuine_flagged": 505,
+   "test_precision": 0.27650429799426934,
+   "rural_genuine_flagged": 0.006625060009601536,
+   "urban_genuine_flagged": 0.005403060908358634,
+   "money_held": 0.22675022651661692,
+   "money_held_range": [
+    0.1794285446362935,
+    0.27664634170979274
+   ],
+   "mules_held_before_flag": 0.17543859649122806,
+   "n_mules_held": 310,
+   "median_days_before_flag": 151.0,
+   "genuine_ever_held": 0.016617275820436834,
+   "n_genuine_held": 1514,
+   "genuine_money_held": 0.01312234861347923
+  },
+  "1/1000": {
+   "threshold": 0.11728803130114482,
+   "test_caught": 0.023769100169779286,
+   "test_n_caught": 42,
+   "test_genuine_flagged": 0.0007353748216441663,
+   "test_n_genuine_flagged": 67,
+   "test_precision": 0.3853211009174312,
+   "rural_genuine_flagged": 0.0008641382621219395,
+   "urban_genuine_flagged": 0.0007187558089100936,
+   "money_held": 0.05098646328669704,
+   "money_held_range": [
+    0.029521528067305704,
+    0.07338691160727188
+   ],
+   "mules_held_before_flag": 0.04980192416525184,
+   "n_mules_held": 88,
+   "median_days_before_flag": 145.5,
+   "genuine_ever_held": 0.002261003182965646,
+   "n_genuine_held": 206,
+   "genuine_money_held": 0.0015448349309612481
+  },
+  "equal 1/100": {
+   "money_held": 0.17335742094371576,
+   "money_held_range": [
+    0.1262765944994562,
+    0.22133743194633718
+   ],
+   "mules_held_before_flag": 0.13695529145444255,
+   "n_mules_held": 242,
+   "median_days_before_flag": 151.0,
+   "genuine_ever_held": 0.010009878169245966,
+   "n_genuine_held": 912,
+   "genuine_money_held": 0.00756505196841909
+  },
+  "equal 1/1000": {
+   "money_held": 0.030250724880348516,
+   "money_held_range": [
+    0.01615758424644285,
+    0.04664792956284259
+   ],
+   "mules_held_before_flag": 0.028862478777589132,
+   "n_mules_held": 51,
+   "median_days_before_flag": 149.0,
+   "genuine_ever_held": 0.0010097684118099,
+   "n_genuine_held": 92,
+   "genuine_money_held": 0.0006149545845473658
+  },
+  "ms_per_account": 0.970675999951709,
+  "importance": {
+   "out_in_ratio": 0.0811,
+   "upi_share": 0.0761,
+   "in_last_month": 0.0732,
+   "two_way_share": 0.0664,
+   "active_days": 0.0625,
+   "txn_per_day": 0.054,
+   "money_in": 0.0513,
+   "money_out": 0.0503,
+   "n_txn": 0.0484,
+   "contacts_out": 0.0447,
+   "contacts_in": 0.04,
+   "n_contacts": 0.0367,
+   "two_hop_reach": 0.0365,
+   "senders_fan_out": 0.0344,
+   "out_in_ratio_last_month": 0.0317,
+   "flagged_contacts_weighted": 0.0316,
+   "days_since_last_txn": 0.0314,
+   "new_contacts_last_month": 0.029,
+   "cp_mean_degree": 0.028,
+   "out_last_month": 0.0278,
+   "receivers_fan_in": 0.0231,
+   "cp_max_degree": 0.0153,
+   "flagged_contacts": 0.007,
+   "rare_cp_share": 0.0066,
+   "shared_address_count": 0.0065,
+   "near_flagged_rare": 0.0045,
+   "rare_two_hop_reach": 0.0019,
+   "address_flagged": 0.0
+  },
+  "seconds": 32
+ },
+ {
+  "features": "1-hop only",
+  "method": "LightGBM",
+  "n_features": 16,
+  "ROC-AUC": 0.831170105577709,
+  "PR-AUC": 0.1453531540002877,
+  "caught@1/100": 0.13582342954159593,
+  "caught@1/1000": 0.017543859649122806,
+  "oof_ROC-AUC": 0.8520917479358999,
+  "CI": {
+   "ROC-AUC": [
+    0.8195354239182642,
+    0.8452963731186385
+   ],
+   "PR-AUC": [
+    0.1353715677710245,
+    0.15845265741950423
+   ],
+   "caught@1/100": [
+    0.11723451958463116,
+    0.15736137484140703
+   ],
+   "caught@1/1000": [
+    0.010359344552479586,
+    0.024172496202571062
+   ]
+  },
+  "1/100": {
+   "threshold": 0.005734019371058381,
+   "test_caught": 0.15166949632144877,
+   "test_n_caught": 268,
+   "test_genuine_flagged": 0.011107452529908902,
+   "test_n_genuine_flagged": 1012,
+   "test_precision": 0.209375,
+   "rural_genuine_flagged": 0.011233797407585214,
+   "urban_genuine_flagged": 0.011091145671974719,
+   "money_held": 0.3747132927352838,
+   "money_held_range": [
+    0.3230211203929991,
+    0.4285389382281025
+   ],
+   "mules_held_before_flag": 0.3135257498585173,
+   "n_mules_held": 554,
+   "median_days_before_flag": 145.0,
+   "genuine_ever_held": 0.03690045000548787,
+   "n_genuine_held": 3362,
+   "genuine_money_held": 0.0273271315815552
+  },
+  "1/1000": {
+   "threshold": 0.15919968704305237,
+   "test_caught": 0.023769100169779286,
+   "test_n_caught": 42,
+   "test_genuine_flagged": 0.0014597738996817034,
+   "test_n_genuine_flagged": 133,
+   "test_precision": 0.24,
+   "rural_genuine_flagged": 0.0021123379740758523,
+   "urban_genuine_flagged": 0.0013755499101555239,
+   "money_held": 0.07240483132035876,
+   "money_held_range": [
+    0.045673834060747605,
+    0.10221617705769834
+   ],
+   "mules_held_before_flag": 0.06395019807583475,
+   "n_mules_held": 113,
+   "median_days_before_flag": 125.0,
+   "genuine_ever_held": 0.005125672264295906,
+   "n_genuine_held": 467,
+   "genuine_money_held": 0.004709497016773643
+  },
+  "equal 1/100": {
+   "money_held": 0.13408332196158385,
+   "money_held_range": [
+    0.09329301224491626,
+    0.17705325917057177
+   ],
+   "mules_held_before_flag": 0.10639501980758348,
+   "n_mules_held": 188,
+   "median_days_before_flag": 129.0,
+   "genuine_ever_held": 0.010009878169245966,
+   "n_genuine_held": 912,
+   "genuine_money_held": 0.008566450359443143
+  },
+  "equal 1/1000": {
+   "money_held": 0.025509417315995018,
+   "money_held_range": [
+    0.009727013016522462,
+    0.04349115411690344
+   ],
+   "mules_held_before_flag": 0.01697792869269949,
+   "n_mules_held": 30,
+   "median_days_before_flag": 124.5,
+   "genuine_ever_held": 0.0010097684118099,
+   "n_genuine_held": 92,
+   "genuine_money_held": 0.0008686802079867002
+  },
+  "ms_per_account": 0.9690649999356538,
+  "seconds": 27
+ },
+ {
+  "features": "+ 2-hop graph",
+  "method": "LightGBM",
+  "n_features": 24,
+  "ROC-AUC": 0.812014712341413,
+  "PR-AUC": 0.11187294358521416,
+  "caught@1/100": 0.09734012450481042,
+  "caught@1/1000": 0.027164685908319185,
+  "oof_ROC-AUC": 0.8368937566800043,
+  "CI": {
+   "ROC-AUC": [
+    0.8018494785441679,
+    0.8253820936904639
+   ],
+   "PR-AUC": [
+    0.10148897774166682,
+    0.12417347662446547
+   ],
+   "caught@1/100": [
+    0.08221095968199886,
+    0.11081258943504782
+   ],
+   "caught@1/1000": [
+    0.019824916052814914,
+    0.03649660112633387
+   ]
+  },
+  "1/100": {
+   "threshold": 0.005061609854307008,
+   "test_caught": 0.10979060554612337,
+   "test_n_caught": 194,
+   "test_genuine_flagged": 0.012841620019756339,
+   "test_n_genuine_flagged": 1170,
+   "test_precision": 0.14222873900293256,
+   "rural_genuine_flagged": 0.014306289006240999,
+   "urban_genuine_flagged": 0.012652580705124233,
+   "money_held": 0.22464022654283544,
+   "money_held_range": [
+    0.17404534510228972,
+    0.27419440438674814
+   ],
+   "mules_held_before_flag": 0.17770232031692135,
+   "n_mules_held": 314,
+   "median_days_before_flag": 150.0,
+   "genuine_ever_held": 0.041696849961584896,
+   "n_genuine_held": 3799,
+   "genuine_money_held": 0.032553713428967665
+  },
+  "1/1000": {
+   "threshold": 0.13143547340138825,
+   "test_caught": 0.022637238256932653,
+   "test_n_caught": 40,
+   "test_genuine_flagged": 0.0007463505652507957,
+   "test_n_genuine_flagged": 68,
+   "test_precision": 0.37037037037037035,
+   "rural_genuine_flagged": 0.0010561689870379261,
+   "urban_genuine_flagged": 0.000706363467377161,
+   "money_held": 0.06599858106722259,
+   "money_held_range": [
+    0.043223084680340466,
+    0.09414797752673817
+   ],
+   "mules_held_before_flag": 0.04980192416525184,
+   "n_mules_held": 88,
+   "median_days_before_flag": 149.0,
+   "genuine_ever_held": 0.0019866095927999123,
+   "n_genuine_held": 181,
+   "genuine_money_held": 0.0015919899550575294
+  },
+  "equal 1/100": {
+   "money_held": 0.10147022988046171,
+   "money_held_range": [
+    0.0736961194327643,
+    0.13574230091985887
+   ],
+   "mules_held_before_flag": 0.0967741935483871,
+   "n_mules_held": 171,
+   "median_days_before_flag": 147.0,
+   "genuine_ever_held": 0.010009878169245966,
+   "n_genuine_held": 912,
+   "genuine_money_held": 0.009653117591356638
+  },
+  "equal 1/1000": {
+   "money_held": 0.0368331551148219,
+   "money_held_range": [
+    0.017910188027729097,
+    0.05764377264869141
+   ],
+   "mules_held_before_flag": 0.027730616864742503,
+   "n_mules_held": 49,
+   "median_days_before_flag": 152.0,
+   "genuine_ever_held": 0.0010097684118099,
+   "n_genuine_held": 92,
+   "genuine_money_held": 0.0008304245395489616
+  },
+  "ms_per_account": 1.026055499778522,
+  "seconds": 30
+ },
+ {
+  "features": "+ PIN/branch (risky)",
+  "method": "LightGBM",
+  "n_features": 30,
+  "ROC-AUC": 0.7843902129660738,
+  "PR-AUC": 0.1109834666300403,
+  "caught@1/100": 0.12620260328239954,
+  "caught@1/1000": 0.03225806451612903,
+  "oof_ROC-AUC": 0.8387362578397243,
+  "CI": {
+   "ROC-AUC": [
+    0.7710209771729831,
+    0.796619082806498
+   ],
+   "PR-AUC": [
+    0.100322498720216,
+    0.12272802319020623
+   ],
+   "caught@1/100": [
+    0.11005413284259769,
+    0.14060774707158688
+   ],
+   "caught@1/1000": [
+    0.020656592836378145,
+    0.04038165478347631
+   ]
+  },
+  "1/100": {
+   "threshold": 0.004509434253673943,
+   "test_caught": 0.09620826259196379,
+   "test_n_caught": 170,
+   "test_genuine_flagged": 0.006036658983646142,
+   "test_n_genuine_flagged": 550,
+   "test_precision": 0.2361111111111111,
+   "rural_genuine_flagged": 0.0061449831973115696,
+   "urban_genuine_flagged": 0.006022677985005267,
+   "money_held": 0.1937946604503655,
+   "money_held_range": [
+    0.15132734390761837,
+    0.23987598664202603
+   ],
+   "mules_held_before_flag": 0.17600452744765138,
+   "n_mules_held": 311,
+   "median_days_before_flag": 149.0,
+   "genuine_ever_held": 0.018296564592251124,
+   "n_genuine_held": 1667,
+   "genuine_money_held": 0.014461005974982757
+  },
+  "1/1000": {
+   "threshold": 0.13153810222314816,
+   "test_caught": 0.019807583474816072,
+   "test_n_caught": 35,
+   "test_genuine_flagged": 0.0007353748216441663,
+   "test_n_genuine_flagged": 67,
+   "test_precision": 0.3431372549019608,
+   "rural_genuine_flagged": 0.0006721075372059529,
+   "urban_genuine_flagged": 0.0007435404919759589,
+   "money_held": 0.050424879470182475,
+   "money_held_range": [
+    0.03196748075839383,
+    0.07363233466985679
+   ],
+   "mules_held_before_flag": 0.0520656479909451,
+   "n_mules_held": 92,
+   "median_days_before_flag": 138.0,
+   "genuine_ever_held": 0.0027000329272308197,
+   "n_genuine_held": 246,
+   "genuine_money_held": 0.0017445442276157394
+  },
+  "equal 1/100": {
+   "money_held": 0.1427518180877843,
+   "money_held_range": [
+    0.1022373493013417,
+    0.1881689446431832
+   ],
+   "mules_held_before_flag": 0.11714770797962648,
+   "n_mules_held": 207,
+   "median_days_before_flag": 151.0,
+   "genuine_ever_held": 0.010009878169245966,
+   "n_genuine_held": 912,
+   "genuine_money_held": 0.007699299864867245
+  },
+  "equal 1/1000": {
+   "money_held": 0.015431214878976265,
+   "money_held_range": [
+    0.007604029791447684,
+    0.024356289519790946
+   ],
+   "mules_held_before_flag": 0.022637238256932653,
+   "n_mules_held": 40,
+   "median_days_before_flag": 142.0,
+   "genuine_ever_held": 0.0010097684118099,
+   "n_genuine_held": 92,
+   "genuine_money_held": 0.000534330608838899
+  },
+  "ms_per_account": 1.1021304999303538,
+  "seconds": 31
+ },
+ {
+  "features": "final, no two-way information",
+  "method": "LightGBM",
+  "n_features": 25,
+  "ROC-AUC": 0.7937495034671733,
+  "PR-AUC": 0.10882686688863932,
+  "caught@1/100": 0.1245048104131296,
+  "caught@1/1000": 0.013582342954159592,
+  "oof_ROC-AUC": 0.8104119115264096,
+  "CI": {
+   "ROC-AUC": [
+    0.7829994531008931,
+    0.8074369242307811
+   ],
+   "PR-AUC": [
+    0.10000208662957741,
+    0.11998479409586905
+   ],
+   "caught@1/100": [
+    0.11140798997203362,
+    0.14294019386051063
+   ],
+   "caught@1/1000": [
+    0.008977652467434483,
+    0.021264971505843718
+   ]
+  },
+  "1/100": {
+   "threshold": 0.004211707950970126,
+   "test_caught": 0.19015280135823429,
+   "test_n_caught": 336,
+   "test_genuine_flagged": 0.01647459115355065,
+   "test_n_genuine_flagged": 1501,
+   "test_precision": 0.1829069134458356,
+   "rural_genuine_flagged": 0.018338934229476717,
+   "urban_genuine_flagged": 0.01623396740814177,
+   "money_held": 0.3842666204316892,
+   "money_held_range": [
+    0.3379725209666135,
+    0.4385742653562828
+   ],
+   "mules_held_before_flag": 0.398981324278438,
+   "n_mules_held": 705,
+   "median_days_before_flag": 142.0,
+   "genuine_ever_held": 0.04887498628032049,
+   "n_genuine_held": 4453,
+   "genuine_money_held": 0.043916818356912905
+  },
+  "1/1000": {
+   "threshold": 0.10403908410739947,
+   "test_caught": 0.0345217883418223,
+   "test_n_caught": 61,
+   "test_genuine_flagged": 0.001920755131160136,
+   "test_n_genuine_flagged": 175,
+   "test_precision": 0.2584745762711864,
+   "rural_genuine_flagged": 0.0023043686989918386,
+   "urban_genuine_flagged": 0.0018712435714728299,
+   "money_held": 0.08463827370814887,
+   "money_held_range": [
+    0.06178533057122962,
+    0.11098272433900332
+   ],
+   "mules_held_before_flag": 0.11262026032823995,
+   "n_mules_held": 199,
+   "median_days_before_flag": 116.0,
+   "genuine_ever_held": 0.011996487762045878,
+   "n_genuine_held": 1093,
+   "genuine_money_held": 0.009775504185587093
+  },
+  "equal 1/100": {
+   "money_held": 0.07282132641296939,
+   "money_held_range": [
+    0.05163373478215627,
+    0.09907132747941383
+   ],
+   "mules_held_before_flag": 0.09281267685342388,
+   "n_mules_held": 164,
+   "median_days_before_flag": 112.5,
+   "genuine_ever_held": 0.010009878169245966,
+   "n_genuine_held": 912,
+   "genuine_money_held": 0.008363525400930395
+  },
+  "equal 1/1000": {
+   "money_held": 0.005229918760248395,
+   "money_held_range": [
+    0.0009951918260139904,
+    0.011107570858322964
+   ],
+   "mules_held_before_flag": 0.009620826259196379,
+   "n_mules_held": 17,
+   "median_days_before_flag": 91.0,
+   "genuine_ever_held": 0.0010097684118099,
+   "n_genuine_held": 92,
+   "genuine_money_held": 0.0005437933300088766
+  },
+  "ms_per_account": 1.0828285001025506,
+  "seconds": 32
+ }
+]
