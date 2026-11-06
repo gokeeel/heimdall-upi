@@ -69,12 +69,12 @@ Only 319 mules were flagged before 2025, so the models learn from few examples. 
 | Method | ROC-AUC (95% range) | PR-AUC | Mules caught at 1 false alarm per 100 genuine | … per 1,000 | Mule money held when 1 in 100 genuine customers is held (95% range) | Time per account* |
 |---|---|---|---|---|---|---|
 | Simple rule (no learning) | 0.81 (0.81–0.82) | 0.08 | 3% | 0.2% | 3% | – |
-| Logistic regression | 0.81 (0.79–0.82) | 0.15 | 14% | 4% | 11% (8–15%) | 1.3 ms |
-| Random forest | 0.81 (0.80–0.82) | 0.17 | 19% | 6% | 15% (12–19%) | 55.3 ms |
-| **LightGBM (chosen)** | **0.83 (0.81–0.84)** | **0.14** | **14%** | **4%** | **17% (13–22%)** | **1.0 ms** |
+| Logistic regression | 0.81 (0.79–0.82) | 0.15 | 14% | 4% | 11% (8–15%) | 2.7 ms |
+| Random forest | 0.81 (0.80–0.82) | 0.19 | 21% | 7% | 13% (10–17%) | 102.4 ms |
+| **LightGBM (chosen)** | **0.83 (0.81–0.84)** | **0.14** | **14%** | **4%** | **17% (13–22%)** | **1.9 ms** |
 | *For comparison:* the same LightGBM tested the usual way (random 70/30 split of the 2025 accounts) | 0.91 ± 0.01 | 0.55 ± 0.03 | 64% | 19% | – | – |
 
-\* Median time to score one account, measured on a 2-core cloud CPU (no GPU). The Kaggle notebook prints its own measurement.
+\* Median time to score one account, measured in the Kaggle notebook on Kaggle's standard CPU (no GPU).
 
 **How to read the scores**
 - **ROC-AUC:** take one mule and one genuine account at random. How often does the mule get the higher score? 0.5 is a coin toss; 1.0 is perfect.
@@ -89,14 +89,14 @@ LightGBM, hold level set on 2022–2024 data for 1 false alarm per 100 accounts,
 | | Result |
 |---|---|
 | Mule money held (credits that arrived before the bank's own flag) | **23%** (95% range 18–28%) |
-| Mules with a hold before the bank's own flag | 310 of 1,767 (18%), a median of **151 days earlier** |
-| Genuine customers with at least one hold for a person to review | 1,514 of 91,110 (1.7%) |
-| Share of genuine customers' credits of ₹1,000+ that were held | 1.3% |
-| On 1 Jan 2025 alone | 193 mules and 505 genuine customers flagged (28% of alerts are real mules) |
+| Mules with a hold before the bank's own flag | 319 of 1,767 (18%), a median of **151 days earlier** |
+| Genuine customers with at least one hold for a person to review | 1,628 of 91,110 (1.8%) |
+| Share of genuine customers' credits of ₹1,000+ that were held | 1.4% |
+| On 1 Jan 2025 alone | 197 mules and 532 genuine customers flagged (27% of alerts are real mules) |
 
-At the stricter level (1 per 1,000): 5% of mule money held (3–7%), 88 mules, and 206 genuine customers (0.23%) with a hold.
+At the stricter level (1 per 1,000): 4% of mule money held (3–6%), 72 mules, and 148 genuine customers (0.16%) with a hold.
 
-**Thresholds drift.** The level was meant to hold 1 in 100 genuine customers; in 2025 it held 1.7 in 100. A bank should re-set the level every month from its review capacity (how many holds its staff can check), not trust a number fixed a year earlier.
+**Thresholds drift.** The level was meant to hold 1 in 100 genuine customers; in 2025 it held 1.8 in 100. A bank should re-set the level every month from its review capacity (how many holds its staff can check), not trust a number fixed a year earlier.
 
 ### 4c. Do the two-hop links and the suspect list help?
 
@@ -124,17 +124,17 @@ PIN-code and branch shares made results worse and could penalise whole neighbour
 |---|---|---|---|
 | Simple rule | 0.81 | 0.012 | 8% |
 | Logistic regression | 0.84 | 0.013 | 7% |
-| Random forest | 0.80 | 0.032 | 25% |
+| Random forest | 0.81 | 0.032 | 25% |
 | LightGBM | 0.81 | 0.022 | 21% |
 
 ### 4d. What we learned
 
 1. **Honest testing changes the picture.** The same model and features score PR-AUC 0.55 on a random split but 0.14 on the out-of-time test. Random splits flatter results.
-2. **Learning beats the simple rule** at realistic false-alarm levels: 3% of mules caught by the rule against 14%–19% for the learned models.
-3. **The methods are close.** Random forest ranks the very top best (PR-AUC 0.17); LightGBM has the best ROC-AUC and holds the most money at equal cost; the differences sit within the ranges. We use LightGBM because it scores one account in 1.0 ms against 55 ms.
+2. **Learning beats the simple rule** at realistic false-alarm levels: 3% of mules caught by the rule against 14%–21% for the learned models.
+3. **The methods are close.** Random forest ranks the very top best (PR-AUC 0.19); LightGBM has the best ROC-AUC and holds the most money at equal cost; the differences sit within the ranges. We use LightGBM because it scores one account in 1.9 ms against 102 ms.
 4. **Holds can come early.** Mules that got a hold got it a median of 151 days before the bank's own flag.
 5. **The model partly relies on a pattern that may be synthetic.** Removing all two-way information lowers ROC-AUC from 0.83 to 0.79 and money held from 17% to 7%. In this dataset almost every genuine contact is two-way, which is unlikely in a real bank.
-6. **Fairness gap:** at the fixed level, genuine **rural** customers were wrongly flagged 0.66% of the time against 0.54% for urban customers (1.2×). Rural flags should go to a person before any hold is placed.
+6. **Fairness gap:** at the fixed level, genuine **rural** customers were wrongly flagged 0.69% of the time against 0.57% for urban customers (1.2×). Rural flags should go to a person before any hold is placed.
 
 **What the model relies on** (share of LightGBM gain): `out_in_ratio` 8%, `upi_share` 8%, `in_last_month` 7%, `two_way_share` 7%, `active_days` 6%, `txn_per_day` 5%, `money_in` 5%, `money_out` 5%. All of the top features describe the account's own behaviour.
 
@@ -145,9 +145,9 @@ PIN-code and branch shares made results worse and could penalise whole neighbour
 
 ## 5. Speed and scale
 
-- **Speed:** scoring one account takes about 1.0 ms (LightGBM, measured above). Updating an account's running numbers is a handful of additions per transaction.
-- **Link numbers:** computed by a nightly batch job, not during the payment. Rebuilding every account's features for one date takes about 2 seconds for the roughly 150,000 active accounts here, working from monthly summary tables on a 2-core machine. Crores of accounts would need a standard data-processing job; that cost is **not yet measured**.
-- **Scale:** UPI processed 24.07 billion transactions in September 2026, about 9,300 per second on average. Each bank checks only its own customers, so this load is naturally divided among banks.
+- **Speed:** scoring one account takes about 1.9 ms (LightGBM, measured above). Updating an account's running numbers is a handful of additions per transaction.
+- **Link numbers:** computed by a nightly batch job, not during the payment. Rebuilding every account's features for one date takes about 2 seconds for the roughly 150,000 active accounts here, working from monthly summary tables on a 2-core machine (not part of the notebook). Crores of accounts would need a standard data-processing job; that cost is **not yet measured**.
+- **Scale:** UPI processed 25.47 billion transactions worth ₹31.53 lakh crore in October 2026, about 9,500 per second on average. Each bank checks only its own customers, so this load is naturally divided among banks.
 - **Open questions:** the end-to-end timing of the full transaction-by-transaction engine, and the memory cost of keeping risk records for crores of accounts (for example in Redis).
 
 ## 6. What others already do
@@ -199,7 +199,7 @@ heimdall-upi/
 
 1. RBI, Draft *Reserve Bank of India (Know Your Customer) Amendment Directions, 2026*, SOP for temporary debit holds, 11 Sep 2026.
 2. NPCI, UPI-OC No. 214 (2025-26), "Reduction in response time of UPI transaction", 26 Apr 2025 (Request/Response Pay limit 15 s from 16 Jun 2025).
-3. NPCI UPI statistics, September 2026: 24.07 billion transactions.
+3. NPCI UPI statistics, October 2026: 25.47 billion transactions worth ₹31.53 lakh crore (released 1 Nov 2026).
 4. Mastercard, "Mastercard leverages its AI capabilities to fight real-time payment scams", 6 Jul 2023.
 5. Banco Central do Brasil: preventive 72-hour block of Pix funds on suspected fraud, effective 16 Nov 2021 (as reported by InfoMoney, 29 Sep 2021).
 6. UK Payment Services (Amendment) Regulations 2024: delay of outbound payments up to 4 business days (in force Oct 2024).
